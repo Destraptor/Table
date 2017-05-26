@@ -1,14 +1,56 @@
-<!doctype html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <title>LastProject</title>
-  <base href="/">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Hatred</title>
+  <script>
+  function addRow() {
+    var myname = document.getElementById("yname");
+    var mylastname = document.getElementById("ylastname");
+    var myage = document.getElementById("yage");
+    var table = document.getElementById("yTable");
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+    row.insertCell(0).innerHTML= table.rows.length - 1;
+    row.insertCell(1).innerHTML= myname.value;
+    row.insertCell(2).innerHTML= mylastname.value;
+    row.insertCell(3).innerHTML= myage.value + " лет";
+}
+  </script>
 </head>
 <body>
-  <app-root>Loading...</app-root>
+   <h1>Перепись ПТУшников</h1>
+   <table id="yImport">
+    <tr>
+        <td>Имя:</td>
+        <td><input type="text" id="yname"></td>
+    </tr>
+    <tr>
+        <td>Фамилия:</td>
+        <td><input type="text" id="ylastname">
+    </tr>
+    <tr>
+        <td>Возраст:</td>
+        <td><input type="text" id="yage"></td>
+    </tr>
+  </table>
+</p>
+  <input type="button" id="yadd" value="Добавить информацию в таблицу" onclick="Javascript:addRow()">
+</p>
+  <table border="1" id="yTable">
+    <thead>
+      <tr>
+        <td width="7%">ID</td>
+        <td width="39%">Имя</td>
+        <td width="39%">Фамилия</td>
+        <td width="15%">Возраст</td>
+      </tr>
+    </thead>
+    <tr>
+      <td>1</td><td>Алмаз</td><td>Галимов</td><td>17 лет</td>
+    </tr>
+    <tr>
+      <td>2</td><td>Никита</td><td>Шуклин</td><td>18 лет</td>
+    </tr>
+  </table>
 </body>
 </html>
